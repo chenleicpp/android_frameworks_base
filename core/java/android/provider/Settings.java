@@ -3481,6 +3481,11 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_NOTIFICATIONS_EXPANDED_VIEW = "lockscreen_notifications_expanded_view";
 
+        /* Network speed indicator
+         * @hide
+         */
+        public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
+
         /**
          * Show lockscreen notifications extended when possible
          * @hide
