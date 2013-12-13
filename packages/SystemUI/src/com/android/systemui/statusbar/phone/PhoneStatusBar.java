@@ -3470,6 +3470,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     mQS.setupQuickSettings();
                     mSettingsContainer.updateResources();
                 }*/
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.QUICK_TILES_PER_ROW))) {
+                recreateStatusBar();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.QUICK_TILES_PER_ROW_DUPLICATE_LANDSCAPE))) {
+                recreateStatusBar();
             } else if (mSettingsContainer != null) {
                 // Refresh the container
                 mSettingsContainer.removeAllViews();
