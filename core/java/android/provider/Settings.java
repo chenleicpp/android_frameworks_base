@@ -2569,6 +2569,15 @@ public final class Settings {
          */
         public static final String ENABLE_MWI_NOTIFICATION = "enable_mwi_notification";
 
+		/**
+         * Network speed indicator
+         * 0 = disabled
+         * 1 = show bits per second
+         * 2 = show Bytes per second
+         * @hide
+         */
+        public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
+
         /**
          * Show pointer location on screen?
          * 0 = no
@@ -3487,11 +3496,6 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_NOTIFICATIONS_EXPANDED_VIEW = "lockscreen_notifications_expanded_view";
-
-        /* Network speed indicator
-         * @hide
-         */
-        public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
         /**
          * Show lockscreen notifications extended when possible
