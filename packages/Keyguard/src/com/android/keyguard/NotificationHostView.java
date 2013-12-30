@@ -352,7 +352,7 @@ public class NotificationHostView extends FrameLayout {
     }
 
     private void handleAddNotification(final boolean showNotification, boolean forceBigContentView) {
-        final NotificationView nv = mNotificationsToAdd.poll();
+        NotificationView nv = mNotificationsToAdd.poll();
         Log.d(TAG, "Add: " + describeNotification(nv.statusBarNotification));
         final StatusBarNotification sbn = nv.statusBarNotification;
         mDismissedNotifications.remove(describeNotification(sbn));
@@ -464,7 +464,7 @@ public class NotificationHostView extends FrameLayout {
             if (!sbn.isClearable()) {
                 mDismissedNotifications.put(describeNotification(sbn), sbn);
             }
-            int duration = getDurationFromDistance(v.getChildAt(0), v.shown ? -mDisplayWidth : mDisplayWidth, 0);
+            int duration =  getDurationFromDistance(v.getChildAt(0), v.shown ? -mDisplayWidth : mDisplayWidth, 0);
             v.getChildAt(0).animate().setDuration(duration).alpha(0).start();
             mNotifications.remove(describeNotification(sbn));
             animateTranslation(v.getChildAt(0), v.shown ? -mDisplayWidth : mDisplayWidth, 0,
@@ -514,13 +514,15 @@ public class NotificationHostView extends FrameLayout {
     }
 
     private void hideNotification(NotificationView nv) {
-        View v = nv.getChildAt(0);
-        int targetX = Math.round(mDisplayWidth - mNotificationMinHeight);
-        int duration = getDurationFromDistance(v, targetX, (int)v.getY(), Math.abs(nv.speedX));
-        if (mShownNotifications > 0 && nv.shown) mShownNotifications--;
-        if (mShownNotifications == 0) animateBackgroundColor(0, duration);
-        animateTranslation(v, targetX, 0, duration);
-        nv.shown = false;
+        if (nv.shown) {
+            View v = nv.getChildAt(0);
+            int targetX = Math.round(mDisplayWidth - mNotificationMinHeight);
+            int duration = getDurationFromDistance(v, targetX, (int)v.getY(), Math.abs(nv.speedX));
+            if (mShownNotifications > 0 && nv.shown) mShownNotifications--;
+            if (mShownNotifications == 0) animateBackgroundColor(0, duration);
+            animateTranslation(v, targetX, 0, duration);
+            nv.shown = false;
+        }
     }
 
     public void showAllNotifications() {
