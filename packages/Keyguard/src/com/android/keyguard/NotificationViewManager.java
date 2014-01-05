@@ -255,7 +255,6 @@ public class NotificationViewManager {
         if (mHostView != null) mHostView.hideAllNotifications();
         if (NotificationListener == null) {
             registerListeners();
-            mHostView.addNotifications();
         }
     }
 
