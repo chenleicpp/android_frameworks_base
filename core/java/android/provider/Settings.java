@@ -3578,6 +3578,13 @@ public final class Settings {
          */
         public static final String KEY_ASSIST_LONG_PRESS_ACTION = "key_assist_long_press_action";
 
+		/**
+		 * Should Flip to Silence be used
+         *
+         * @hide
+         */
+        public static final String FLIP_ACTION_KEY = "flip_action";
+
         /**
          * Action to perform when the app switch key is pressed. (Default is 2)
          * (See KEY_HOME_LONG_PRESS_ACTION for valid values)
