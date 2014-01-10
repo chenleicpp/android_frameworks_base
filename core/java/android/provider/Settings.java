@@ -3654,6 +3654,13 @@ public final class Settings {
          */
         public static final String HALO_NOTIFY_COUNT = "halo_notify_count";
 
+		/**
+         * Whether incomming call UI stays in background
+         *
+         * @hide
+         */
+        public static final String CALL_UI_IN_BACKGROUND = "call_ui_in_background";
+
         /**
          * HALO message box animation?, should default to 2 (flip animation)
          * @hide
