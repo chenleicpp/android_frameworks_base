@@ -355,7 +355,7 @@ public class NotificationHostView extends FrameLayout {
     }
 
     private void handleAddNotification(final boolean showNotification, boolean forceBigContentView) {
-        NotificationView nv = mNotificationsToAdd.poll();
+        final NotificationView nv = mNotificationsToAdd.poll();
         Log.d(TAG, "Add: " + describeNotification(nv.statusBarNotification));
         final StatusBarNotification sbn = nv.statusBarNotification;
         mDismissedNotifications.remove(describeNotification(sbn));
