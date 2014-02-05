@@ -2913,7 +2913,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             intent.setClassName("com.android.settings",
                     "com.android.settings.Settings$QuickSettingsConfigActivity");
             startActivityDismissingKeyguard(intent, true);
-	}
+		}
+	};
 
     private View.OnClickListener mHaloButtonListener = new View.OnClickListener() {
         public void onClick(View v) {
