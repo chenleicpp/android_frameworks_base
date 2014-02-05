@@ -614,15 +614,12 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         });
 
         if (mRecreating) {
-	    removeSidebarView();
+	    	//removeSidebarView();
         } else {
-            addActiveDisplayView();
             /* ChaosLab: GestureAnywhere - BEGIN */
             addGestureAnywhereView();
             /* ChaosLab: GestureAnywhere - END */
         }
-
-		addSidebarView();
 
         // figure out which pixel-format to use for the status bar.
         mPixelFormat = PixelFormat.OPAQUE;
